@@ -1,6 +1,10 @@
 Rainforest2::Application.routes.draw do
+  get "users/new"
+
+  get "users/create"
+
   resources :products
-  
+  resources :users, :only => [:new, :create]
   root :to => "products#index"
 
   # The priority is based upon order of creation:
